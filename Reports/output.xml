@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.0 on win32)" generated="2024-03-07T13:00:37.351953" rpa="false" schemaversion="5">
+<suite id="s1" name="Robotframwork" source="D:\robotframwork">
+<suite id="s1-s1" name="TestSuits" source="D:\robotframwork\TestSuits">
+<suite id="s1-s1-s1" name="ProductPage" source="D:\robotframwork\TestSuits\ProductPage.robot">
+<test id="s1-s1-s1-t1" name="Validate products are getting sorted by A-Z order" line="26">
+<kw name="Open the Browser with URL" owner="Resource">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2024-03-07T13:00:37.659155" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>${browser_name}</arg>
+<arg>D:/robotframwork/Drivers/${browser_name}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2024-03-07T13:00:37.659155" elapsed="2.301125"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-03-07T13:00:39.961282" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${login_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-03-07T13:00:39.960280" elapsed="1.198059"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-03-07T13:00:41.158339" elapsed="0.143089"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-03-07T13:00:41.302428" elapsed="0.002998"/>
+</kw>
+<status status="PASS" start="2024-03-07T13:00:37.658150" elapsed="3.647276"/>
+</kw>
+<kw name="Fill the login form" owner="Resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-07T13:00:41.309515" level="INFO">Typing text 'standard_user' into text field '//*[@id="user-name"]'.</msg>
+<arg>${username_text}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-07T13:00:41.308511" elapsed="0.253601"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-07T13:00:41.563121" level="INFO">Typing text 'secret_sauce' into text field '//*[@id="password"]'.</msg>
+<arg>${password_text}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-07T13:00:41.562112" elapsed="0.113005"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-07T13:00:41.675117" level="INFO">Clicking button '//*[@id="login-button"]'.</msg>
+<arg>${login_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-07T13:00:41.675117" elapsed="0.086892"/>
+</kw>
+<arg>${valid_username}</arg>
+<arg>${valid_password}</arg>
+<status status="PASS" start="2024-03-07T13:00:41.307473" elapsed="0.454536"/>
+</kw>
+<kw name="Sort Products" owner="Resource">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-03-07T13:00:41.764009" level="INFO">Verifying element '//a[@id='item_4_title_link']/div' contains exact text 'Create List'.</msg>
+<msg time="2024-03-07T13:00:42.038129" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-03-07T13:00:42.038129" level="FAIL">The text of element '//a[@id='item_4_title_link']/div' should have been 'Create List' but it was 'Sauce Labs Backpack'.</msg>
+<arg>${item_backpack}</arg>
+<arg>${value1}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2024-03-07T13:00:41.763011" elapsed="0.276123">The text of element '//a[@id='item_4_title_link']/div' should have been 'Create List' but it was 'Sauce Labs Backpack'.</status>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${item_bike_light}</arg>
+<arg>${value2}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2024-03-07T13:00:42.040132" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${item_t-shirt}</arg>
+<arg>${value3}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2024-03-07T13:00:42.040132" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${item_jacket}</arg>
+<arg>${value4}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2024-03-07T13:00:42.040132" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${item_onesie}</arg>
+<arg>${value5}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2024-03-07T13:00:42.040132" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${item_t-shirt_red}</arg>
+<arg>${value6}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2024-03-07T13:00:42.040132" elapsed="0.000000"/>
+</kw>
+<arg>${PRODUCTS}[0]</arg>
+<arg>${PRODUCTS}[1]</arg>
+<arg>${PRODUCTS}[2]</arg>
+<arg>${PRODUCTS}[3]</arg>
+<arg>${PRODUCTS}[4]</arg>
+<arg>${PRODUCTS}[5]</arg>
+<status status="FAIL" start="2024-03-07T13:00:41.763011" elapsed="0.277121">The text of element '//a[@id='item_4_title_link']/div' should have been 'Create List' but it was 'Sauce Labs Backpack'.</status>
+</kw>
+<kw name="Close Browser Session" owner="Resource">
+<status status="NOT RUN" start="2024-03-07T13:00:42.041129" elapsed="0.000000"/>
+</kw>
+<tag>SMOKE</tag>
+<status status="FAIL" start="2024-03-07T13:00:37.657143" elapsed="4.383986">The text of element '//a[@id='item_4_title_link']/div' should have been 'Create List' but it was 'Sauce Labs Backpack'.</status>
+</test>
+<doc>Tests to Product Page</doc>
+<status status="FAIL" start="2024-03-07T13:00:37.386808" elapsed="4.657324"/>
+</suite>
+<status status="FAIL" start="2024-03-07T13:00:37.383809" elapsed="4.662330"/>
+</suite>
+<status status="FAIL" start="2024-03-07T13:00:37.353980" elapsed="4.694280"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">SMOKE</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Robotframwork">Robotframwork</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="TestSuits">Robotframwork.TestSuits</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="ProductPage">Robotframwork.TestSuits.ProductPage</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-03-07T13:00:37.334972" level="WARN">Error in file 'D:\robotframwork\KeyWords\Resource.robot' on line 75: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-03-07T13:00:37.335946" level="WARN">Error in file 'D:\robotframwork\KeyWords\Resource.robot' on line 81: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-03-07T13:00:37.648409" level="WARN">Error in file 'D:\robotframwork\KeyWords\Resource.robot' on line 75: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-03-07T13:00:37.649411" level="WARN">Error in file 'D:\robotframwork\KeyWords\Resource.robot' on line 81: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>
