@@ -57,6 +57,7 @@ Validate user can remove product from cart page
 
 Validate user can add multiple items in the cart
     Add multiple product items in the cart
+    Click On Cart Icon
     Click On Checkout Button
     Fill The Checkout Form
     Click On Continue Button From Check Out Page

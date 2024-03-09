@@ -50,13 +50,6 @@ Verify Product count on products page
      Should Be Equal As Numbers    ${product_count}    ${total_products}
 
 Sort Products
-#    [Arguments]     ${value1}   ${value2}   ${value3}   ${value4}   ${value5}   ${value6}
-#    Element Text Should Be    ${item_backpack}    ${value1}
-#    Element Text Should Be    ${item_bike_light}    ${value2}
-#    Element Text Should Be    ${item_t-shirt}    ${value3}
-#    Element Text Should Be    ${item_jacket}    ${value4}
-#    Element Text Should Be    ${item_onesie}    ${value5}
-#    Element Text Should Be    ${item_t-shirt_red}    ${value6}
     ${total_products}    Get Element Count    ${product_list}
     ${expected_List}    Get Dictionary Keys    ${product_dict}
 
@@ -244,12 +237,17 @@ Add multiple product items in the cart
            Click Element    ${add_item}
         END
     END
+    RETURN    ${random_values}
+
+Verify cart items    
     Click On Cart Icon
     ${total_products_in_cart}    Get Element Count    ${product_list}
-    Should Be Equal    ${random_number}    ${total_products_in_cart}
+    ${products_in_cart}    Add multiple product items in the cart
+    Should Be Equal    ${products_in_cart}    ${total_products_in_cart}
 
 Remove multiple product items from the cart
     Add multiple product items in the cart
+    Click On Cart Icon
     ${remove_buttons}    Get Element Count    ${remove_button}
     ${web_elements}    Get Webelements    ${remove_button}
      FOR    ${index}    IN RANGE    0    ${remove_buttons}
@@ -261,6 +259,7 @@ Remove multiple product items from the cart
     
 Verify the total price of the cart item
     Add Multiple Product Items In The Cart
+    Click On Cart Icon
     Click On Checkout Button
     Fill The Checkout Form
     Click On Continue Button From Check Out Page
@@ -282,3 +281,4 @@ Verify the total price of the cart item
     ${price_after_tax}    Evaluate    ${total} + ${tax}
     ${actual_price_after_tax}    Get Text    ${total_price}
     ${actual_price_after_tax}    Set Variable    ${actual_price_after_tax.replace('Tax: $', '')}
+    Should Be Equal As Strings    ${price_after_tax}    ${actual_price_after_tax}
